@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const validateToken = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/users/validateToken', {
+      const res = await axios.get('https://ai-powered-job-match.onrender.com/api/users/validateToken', {
         withCredentials: true,
       });
       setUser(res.data.user);
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const logoutUser = async () => {
     try {
-      await axios.post('http://localhost:5000/api/users/logout', {}, {
+      await axios.post('https://ai-powered-job-match.onrender.com/api/users/logout', {}, {
         withCredentials: true,
       });
       setAuth(false);
